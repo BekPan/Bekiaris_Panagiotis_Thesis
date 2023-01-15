@@ -61,8 +61,8 @@ public class GuitarActivity extends AppCompatActivity implements View.OnClickLis
         });
 
         AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
-                .setContentType(AudioAttributes.CONTENT_TYPE_MOVIE)
+                .setUsage(AudioAttributes.USAGE_MEDIA)
+                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
                 .build();
         guitarPool = new SoundPool.Builder()
                 .setMaxStreams(6)
