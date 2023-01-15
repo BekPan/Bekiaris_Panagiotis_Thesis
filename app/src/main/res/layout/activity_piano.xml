@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:viewBindingIgnore="true">
+    tools:context=".PianoActivity">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -25,4 +24,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu"
         app:backgroundTint="#808080"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GuitarActivity">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:contentDescription="@string/Image"
+            android:id="@+id/imageViewGuitar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/guitar" />
+
+        <Button
+            android:id="@+id/buttonNoteGuitarEhigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="265dp"
+            android:layout_marginEnd="12dp"
+            android:text="@string/noteE"
+            android:textColor="@color/white"
+            android:backgroundTint="#383737"
+            />
+
+        <Button
+            android:id="@+id/buttonNoteGuitarB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="175dp"
+            android:layout_marginEnd="12dp"
+            android:text="@string/noteB"
+            android:textColor="@color/white"
+            android:backgroundTint="#383737"
+            />
+
+        <Button
+            android:id="@+id/buttonNoteGuitarG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="95dp"
+            android:layout_marginEnd="12dp"
+            android:text="@string/noteG"
+            android:textColor="@color/white"
+            android:backgroundTint="#383737"
+            />
+
+        <Button
+            android:id="@+id/buttonNoteGuitarD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="95dp"
+            android:layout_marginStart="15dp"
+            android:text="@string/noteD"
+            android:textColor="@color/white"
+            android:backgroundTint="#383737"
+            />
+
+        <Button
+            android:id="@+id/buttonNoteGuitarA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="175dp"
+            android:layout_marginStart="15dp"
+            android:text="@string/noteA"
+            android:textColor="@color/white"
+            android:backgroundTint="#383737"
+            />
+
+        <Button
+            android:id="@+id/buttonNoteGuitarElow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="265dp"
+            android:layout_marginStart="15dp"
+            android:text="@string/noteE"
+            android:textColor="@color/white"
+            android:backgroundTint="#383737"
+            />
+    </FrameLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu"
+        app:backgroundTint="#808080"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

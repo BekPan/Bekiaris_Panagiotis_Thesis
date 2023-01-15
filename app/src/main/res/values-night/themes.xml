@@ -2,15 +2,15 @@
     <!-- Base application theme. -->
     <style name="Theme.BekiarisPanagiotisThesis" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorPrimaryVariant">@color/black</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">#383737</item>
+        <item name="colorPrimaryVariant">#383737</item>
+        <item name="colorOnPrimary">#383737</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/black</item>
-        <item name="colorSecondaryVariant">@color/black</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">#383737</item>
+        <item name="colorSecondaryVariant">#383737</item>
+        <item name="colorOnSecondary">#383737</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>

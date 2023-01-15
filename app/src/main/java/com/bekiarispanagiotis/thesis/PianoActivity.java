@@ -1,6 +1,5 @@
 package com.bekiarispanagiotis.thesis;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,17 +8,15 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
-public class MainActivity extends AppCompatActivity {
+public class PianoActivity extends AppCompatActivity {
 
     private View maxView;
     BottomNavigationView bottomNavigationView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_piano);
 
         maxView = getWindow().getDecorView();
         maxView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
@@ -31,17 +28,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.piano);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.home:
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.piano:
-                        startActivity(new Intent(getApplicationContext(),PianoActivity.class));
-                        overridePendingTransition(0,0);
                         return true;
                     case R.id.guitar:
                         startActivity(new Intent(getApplicationContext(),GuitarActivity.class));
@@ -55,9 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
     }
-
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
