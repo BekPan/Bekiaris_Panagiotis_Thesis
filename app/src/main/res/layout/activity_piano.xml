@@ -14,6 +14,115 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:contentDescription="@string/Image"
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/piano"
+            android:scaleType="fitXY"/>
+
+        <Button
+            android:id="@+id/buttonNotePianoCsharp"
+            android:layout_width="255dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="45dp"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/buttonNotePianoDsharp"
+            android:layout_width="255dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="175dp"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/buttonNotePianoFsharp"
+            android:layout_width="255dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="360dp"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/buttonNotePianoGsharp"
+            android:layout_width="255dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="150dp"
+            android:layout_marginBottom="270dp"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/buttonNotePianoAsharp"
+            android:layout_width="255dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="150dp"
+            android:layout_marginBottom="152dp"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/buttonNotePianoChi"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="5dp"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/buttonNotePianoC"
+            android:layout_width="140dp"
+            android:layout_height="90dp"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/buttonNotePianoD"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="100dp"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/buttonNotePianoE"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="210dp"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/buttonNotePianoF"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="310dp"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/buttonNotePianoG"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="300dp"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/buttonNotePianoA"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="195dp"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/buttonNotePianoB"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="90dp"
+            android:background="@android:color/transparent"/>
     </FrameLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"

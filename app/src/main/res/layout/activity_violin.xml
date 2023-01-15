@@ -20,7 +20,7 @@
             android:id="@+id/imageViewViolin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/violin2" />
+            app:srcCompat="@drawable/violin" />
 
         <Button
             android:id="@+id/buttonNoteViolinE"
