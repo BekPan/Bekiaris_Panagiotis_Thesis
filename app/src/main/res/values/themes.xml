@@ -9,8 +9,14 @@
         <item name="colorSecondary">#383737</item>
         <item name="colorSecondaryVariant">#383737</item>
         <item name="colorOnSecondary">#383737</item>
+        <!-- Navigation bar color. -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@android:color/transparent</item>
+
+        <item name="android:windowLightStatusBar">
+            true
+        </item>
         <!-- Customize your theme here. -->
     </style>
 </resources>

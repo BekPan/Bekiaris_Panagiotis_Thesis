@@ -36,7 +36,7 @@
             android:layout_width="255dp"
             android:layout_height="60dp"
             android:layout_marginStart="150dp"
-            android:layout_marginTop="175dp"
+            android:layout_marginTop="169dp"
             android:background="@android:color/transparent"/>
 
         <Button
@@ -44,7 +44,7 @@
             android:layout_width="255dp"
             android:layout_height="60dp"
             android:layout_marginStart="150dp"
-            android:layout_marginTop="360dp"
+            android:layout_marginTop="340dp"
             android:background="@android:color/transparent"/>
 
         <Button
@@ -53,7 +53,7 @@
             android:layout_height="60dp"
             android:layout_gravity="bottom"
             android:layout_marginStart="150dp"
-            android:layout_marginBottom="270dp"
+            android:layout_marginBottom="250dp"
             android:background="@android:color/transparent"/>
 
         <Button
@@ -62,13 +62,13 @@
             android:layout_height="60dp"
             android:layout_gravity="bottom"
             android:layout_marginStart="150dp"
-            android:layout_marginBottom="152dp"
+            android:layout_marginBottom="135dp"
             android:background="@android:color/transparent"/>
 
         <Button
             android:id="@+id/buttonNotePianoChi"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             android:layout_gravity="bottom"
             android:layout_marginBottom="5dp"
             android:background="@android:color/transparent"/>
@@ -76,52 +76,52 @@
         <Button
             android:id="@+id/buttonNotePianoC"
             android:layout_width="140dp"
-            android:layout_height="90dp"
+            android:layout_height="80dp"
             android:background="@android:color/transparent"/>
 
         <Button
             android:id="@+id/buttonNotePianoD"
             android:layout_width="140dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="100dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="90dp"
             android:background="@android:color/transparent"/>
 
         <Button
             android:id="@+id/buttonNotePianoE"
             android:layout_width="140dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="210dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="190dp"
             android:background="@android:color/transparent"/>
 
         <Button
             android:id="@+id/buttonNotePianoF"
             android:layout_width="140dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="310dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="290dp"
             android:background="@android:color/transparent"/>
 
         <Button
             android:id="@+id/buttonNotePianoG"
             android:layout_width="140dp"
-            android:layout_height="100dp"
+            android:layout_height="90dp"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="300dp"
+            android:layout_marginBottom="285dp"
             android:background="@android:color/transparent"/>
 
         <Button
             android:id="@+id/buttonNotePianoA"
             android:layout_width="140dp"
-            android:layout_height="100dp"
+            android:layout_height="90dp"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="195dp"
+            android:layout_marginBottom="185dp"
             android:background="@android:color/transparent"/>
 
         <Button
             android:id="@+id/buttonNotePianoB"
             android:layout_width="140dp"
-            android:layout_height="100dp"
+            android:layout_height="90dp"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="90dp"
+            android:layout_marginBottom="85dp"
             android:background="@android:color/transparent"/>
     </FrameLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView

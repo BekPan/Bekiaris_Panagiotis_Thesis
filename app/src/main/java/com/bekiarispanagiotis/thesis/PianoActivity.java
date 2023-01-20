@@ -60,7 +60,7 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
                 return false;
             }
         });
-
+        //load sounds to cache
         AudioAttributes audioAttributes = new AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_MEDIA)
                 .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
@@ -137,55 +137,42 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
             case R.id.buttonNotePianoA:
                 //play sound from button
                 pianoPool.play(soundA,1,1,0,0,1);
-                Toast.makeText(PianoActivity.this, "♪A♪", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.buttonNotePianoAsharp:
                 pianoPool.play(soundAS,1,1,0,0,1);
-                Toast.makeText(PianoActivity.this, "♪A#♪", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.buttonNotePianoB:
                 pianoPool.play(soundB,1,1,0,0,1);
-                Toast.makeText(PianoActivity.this, "♪B♪", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.buttonNotePianoC:
                 pianoPool.play(soundC,1,1,0,0,1);
-                Toast.makeText(PianoActivity.this, "♪C♪", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.buttonNotePianoCsharp:
                 pianoPool.play(soundCS,1,1,0,0,1);
-                Toast.makeText(PianoActivity.this, "♪C#♪", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.buttonNotePianoChi:
                 pianoPool.play(soundCH,1,1,0,0,1);
-                Toast.makeText(PianoActivity.this, "♪C♪", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.buttonNotePianoD:
                 pianoPool.play(soundD,1,1,0,0,1);
-                Toast.makeText(PianoActivity.this, "♪D♪", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.buttonNotePianoDsharp:
                 pianoPool.play(soundDS,1,1,0,0,1);
-                Toast.makeText(PianoActivity.this, "♪D#♪", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.buttonNotePianoE:
                 pianoPool.play(soundE,1,1,0,0,1);
-                Toast.makeText(PianoActivity.this, "♪E♪", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.buttonNotePianoF:
                 pianoPool.play(soundF,1,1,0,0,1);
-                Toast.makeText(PianoActivity.this, "♪F♪", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.buttonNotePianoFsharp:
                 pianoPool.play(soundFS,1,1,0,0,1);
-                Toast.makeText(PianoActivity.this, "♪F#♪", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.buttonNotePianoG:
                 pianoPool.play(soundG,1,1,0,0,1);
-                Toast.makeText(PianoActivity.this, "♪G♪", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.buttonNotePianoGsharp:
                 pianoPool.play(soundGS,1,1,0,0,1);
-                Toast.makeText(PianoActivity.this, "♪G#♪", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

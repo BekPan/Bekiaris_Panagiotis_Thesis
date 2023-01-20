@@ -60,7 +60,7 @@ public class ViolinActivity extends AppCompatActivity implements View.OnClickLis
                 return false;
             }
         });
-
+        //load sounds to cache
         AudioAttributes audioAttributes = new AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_MEDIA)
                 .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
