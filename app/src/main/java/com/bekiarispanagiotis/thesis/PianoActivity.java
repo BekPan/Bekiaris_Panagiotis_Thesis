@@ -1,5 +1,6 @@
 package com.bekiarispanagiotis.thesis;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 public class PianoActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -38,9 +40,9 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.piano);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
@@ -60,6 +62,7 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
                 return false;
             }
         });
+
         //load sounds to cache
         AudioAttributes audioAttributes = new AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_MEDIA)

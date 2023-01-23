@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Tuner Helper</string>
+    <string name="Home">Home</string>
+    <string name="Piano">Piano</string>
+    <string name="Guitar">Guitar</string>
+    <string name="Violin">Violin</string>
     <string name="Image">Image</string>
     <string name="noteA">A</string>
     <string name="noteAsharp">A#</string>

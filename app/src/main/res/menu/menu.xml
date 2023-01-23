@@ -3,18 +3,18 @@
 
     <item
         android:id="@+id/home"
-        android:title="Home"
+        android:title="@string/Home"
         android:icon="@drawable/ic_baseline_home_24"/>
     <item
         android:id="@+id/piano"
-        android:title="Piano"
+        android:title="@string/Piano"
         android:icon="@drawable/pianoicon"/>
     <item
         android:id="@+id/guitar"
-        android:title="Guitar"
+        android:title="@string/Guitar"
         android:icon="@drawable/guitaricon"/>
     <item
         android:id="@+id/violin"
-        android:title="Violin"
+        android:title="@string/Violin"
         android:icon="@drawable/violinicon"/>
 </menu>
