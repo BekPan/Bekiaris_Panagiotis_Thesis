@@ -138,7 +138,6 @@ public class GuitarActivity extends AppCompatActivity implements View.OnClickLis
                 guitarPool.play(soundG,1,1,0,0,1);
                 break;
         }
-        finish();
     }
 
     @Override

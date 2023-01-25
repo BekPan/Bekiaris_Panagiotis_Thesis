@@ -127,7 +127,6 @@ public class ViolinActivity extends AppCompatActivity implements View.OnClickLis
                 violinPool.play(soundG,1,1,0,0,1);
                 break;
         }
-        finish();
     }
 
     @Override

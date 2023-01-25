@@ -181,7 +181,6 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
                 pianoPool.play(soundGS,1,1,0,0,1);
                 break;
         }
-        finish();
     }
 
     @Override
