@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -17,6 +19,7 @@ public class GuitarActivity extends AppCompatActivity implements View.OnClickLis
 
     private View maxView;
     BottomNavigationView bottomNavigationView;
+    private boolean isBackPressedOnce = false;
 
     private Button buttonA, buttonB, buttonD, buttonEhi, buttonElo, buttonG;
     private SoundPool guitarPool;
@@ -45,16 +48,19 @@ public class GuitarActivity extends AppCompatActivity implements View.OnClickLis
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         overridePendingTransition(0,0);
+                        finish();
                         return true;
                     case R.id.piano:
                         startActivity(new Intent(getApplicationContext(),PianoActivity.class));
                         overridePendingTransition(0,0);
+                        finish();
                         return true;
                     case R.id.guitar:
                         return true;
                     case R.id.violin:
                         startActivity(new Intent(getApplicationContext(),ViolinActivity.class));
                         overridePendingTransition(0,0);
+                        finish();
                         return true;
                 }
                 return false;
@@ -132,6 +138,7 @@ public class GuitarActivity extends AppCompatActivity implements View.OnClickLis
                 guitarPool.play(soundG,1,1,0,0,1);
                 break;
         }
+        finish();
     }
 
     @Override
@@ -142,4 +149,21 @@ public class GuitarActivity extends AppCompatActivity implements View.OnClickLis
             guitarPool = null;
         }
     }
+
+    public void onBackPressed() {
+        if (isBackPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+        Toast.makeText(this,"Tap again to exit", Toast.LENGTH_SHORT).show();
+        isBackPressedOnce = true;
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                isBackPressedOnce = false;
+            }
+        }, 2000);
+    }
+
 }

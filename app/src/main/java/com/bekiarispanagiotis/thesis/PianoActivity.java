@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -17,6 +19,7 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
 
     private View maxView;
     BottomNavigationView bottomNavigationView;
+    private boolean isBackPressedOnce = false;
 
     private Button buttonA, buttonAS, buttonB, buttonC, buttonCS, buttonCH, buttonD, buttonDS, buttonE, buttonF, buttonFS, buttonG, buttonGS;
     private SoundPool pianoPool;
@@ -45,16 +48,19 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         overridePendingTransition(0,0);
+                        finish();
                         return true;
                     case R.id.piano:
                         return true;
                     case R.id.guitar:
                         startActivity(new Intent(getApplicationContext(),GuitarActivity.class));
                         overridePendingTransition(0,0);
+                        finish();
                         return true;
                     case R.id.violin:
                         startActivity(new Intent(getApplicationContext(),ViolinActivity.class));
                         overridePendingTransition(0,0);
+                        finish();
                         return true;
                 }
                 return false;
@@ -112,7 +118,6 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
         buttonFS.setOnClickListener(this);
         buttonG.setOnClickListener(this);
         buttonGS.setOnClickListener(this);
-
     }
 
     @Override
@@ -176,6 +181,7 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
                 pianoPool.play(soundGS,1,1,0,0,1);
                 break;
         }
+        finish();
     }
 
     @Override
@@ -185,5 +191,21 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
             pianoPool.release();
             pianoPool = null;
         }
+    }
+
+    public void onBackPressed() {
+        if (isBackPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+        Toast.makeText(this,"Tap again to exit", Toast.LENGTH_SHORT).show();
+        isBackPressedOnce = true;
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                isBackPressedOnce = false;
+            }
+        }, 2000);
     }
 }
