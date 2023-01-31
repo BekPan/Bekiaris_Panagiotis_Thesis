@@ -2,6 +2,7 @@ package com.bekiarispanagiotis.thesis;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
@@ -21,7 +22,6 @@ public class GuitarActivity extends AppCompatActivity implements View.OnClickLis
     BottomNavigationView bottomNavigationView;
     private boolean isBackPressedOnce = false;
 
-    private Button buttonA, buttonB, buttonD, buttonEhi, buttonElo, buttonG;
     private SoundPool guitarPool;
     private int soundA, soundB, soundD, soundEhi, soundElo, soundG;
     @Override
@@ -42,6 +42,7 @@ public class GuitarActivity extends AppCompatActivity implements View.OnClickLis
         bottomNavigationView.setSelectedItemId(R.id.guitar);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()){
@@ -83,12 +84,12 @@ public class GuitarActivity extends AppCompatActivity implements View.OnClickLis
         soundElo = guitarPool.load(this,R.raw.guitar_e_lo,1);
         soundG = guitarPool.load(this,R.raw.guitar_g,1);
 
-        buttonA = findViewById(R.id.buttonNoteGuitarA);
-        buttonB = findViewById(R.id.buttonNoteGuitarB);
-        buttonD = findViewById(R.id.buttonNoteGuitarD);
-        buttonEhi = findViewById(R.id.buttonNoteGuitarEhigh);
-        buttonElo = findViewById(R.id.buttonNoteGuitarElow);
-        buttonG = findViewById(R.id.buttonNoteGuitarG);
+        Button buttonA = findViewById(R.id.buttonNoteGuitarA);
+        Button buttonB = findViewById(R.id.buttonNoteGuitarB);
+        Button buttonD = findViewById(R.id.buttonNoteGuitarD);
+        Button buttonEhi = findViewById(R.id.buttonNoteGuitarEhigh);
+        Button buttonElo = findViewById(R.id.buttonNoteGuitarElow);
+        Button buttonG = findViewById(R.id.buttonNoteGuitarG);
 
         buttonA.setOnClickListener(this);
         buttonB.setOnClickListener(this);
@@ -115,6 +116,7 @@ public class GuitarActivity extends AppCompatActivity implements View.OnClickLis
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()){

@@ -2,6 +2,7 @@ package com.bekiarispanagiotis.thesis;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
@@ -21,7 +22,6 @@ public class ViolinActivity extends AppCompatActivity implements View.OnClickLis
     BottomNavigationView bottomNavigationView;
     private boolean isBackPressedOnce = false;
 
-    private Button buttonA, buttonD, buttonE, buttonG;
     private SoundPool violinPool;
     private int soundA, soundD, soundE, soundG;
 
@@ -43,6 +43,7 @@ public class ViolinActivity extends AppCompatActivity implements View.OnClickLis
         bottomNavigationView.setSelectedItemId(R.id.violin);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()){
@@ -82,10 +83,10 @@ public class ViolinActivity extends AppCompatActivity implements View.OnClickLis
         soundE = violinPool.load(this,R.raw.violin_e,1);
         soundG = violinPool.load(this,R.raw.violin_g,1);
 
-        buttonA = findViewById(R.id.buttonNoteViolinA);
-        buttonD = findViewById(R.id.buttonNoteViolinD);
-        buttonE = findViewById(R.id.buttonNoteViolinE);
-        buttonG = findViewById(R.id.buttonNoteViolinG);
+        Button buttonA = findViewById(R.id.buttonNoteViolinA);
+        Button buttonD = findViewById(R.id.buttonNoteViolinD);
+        Button buttonE = findViewById(R.id.buttonNoteViolinE);
+        Button buttonG = findViewById(R.id.buttonNoteViolinG);
 
         buttonA.setOnClickListener(this);
         buttonD.setOnClickListener(this);
@@ -110,6 +111,7 @@ public class ViolinActivity extends AppCompatActivity implements View.OnClickLis
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()){

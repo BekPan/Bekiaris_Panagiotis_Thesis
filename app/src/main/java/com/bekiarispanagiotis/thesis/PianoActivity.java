@@ -2,6 +2,7 @@ package com.bekiarispanagiotis.thesis;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
@@ -21,7 +22,6 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
     BottomNavigationView bottomNavigationView;
     private boolean isBackPressedOnce = false;
 
-    private Button buttonA, buttonAS, buttonB, buttonC, buttonCS, buttonCH, buttonD, buttonDS, buttonE, buttonF, buttonFS, buttonG, buttonGS;
     private SoundPool pianoPool;
     private int soundA, soundAS, soundB, soundC, soundCS, soundCH, soundD, soundDS, soundE, soundF, soundFS, soundG, soundGS;
     @Override
@@ -42,6 +42,7 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
         bottomNavigationView.setSelectedItemId(R.id.piano);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()){
@@ -91,19 +92,19 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
         soundG = pianoPool.load(this,R.raw.piano_g,1);
         soundGS = pianoPool.load(this,R.raw.piano_gs,1);
 
-        buttonA = findViewById(R.id.buttonNotePianoA);
-        buttonAS = findViewById(R.id.buttonNotePianoAsharp);
-        buttonB = findViewById(R.id.buttonNotePianoB);
-        buttonC = findViewById(R.id.buttonNotePianoC);
-        buttonCS = findViewById(R.id.buttonNotePianoCsharp);
-        buttonCH = findViewById(R.id.buttonNotePianoChi);
-        buttonD = findViewById(R.id.buttonNotePianoD);
-        buttonDS = findViewById(R.id.buttonNotePianoDsharp);
-        buttonE = findViewById(R.id.buttonNotePianoE);
-        buttonF = findViewById(R.id.buttonNotePianoF);
-        buttonFS = findViewById(R.id.buttonNotePianoFsharp);
-        buttonG = findViewById(R.id.buttonNotePianoG);
-        buttonGS = findViewById(R.id.buttonNotePianoGsharp);
+        Button buttonA = findViewById(R.id.buttonNotePianoA);
+        Button buttonAS = findViewById(R.id.buttonNotePianoAsharp);
+        Button buttonB = findViewById(R.id.buttonNotePianoB);
+        Button buttonC = findViewById(R.id.buttonNotePianoC);
+        Button buttonCS = findViewById(R.id.buttonNotePianoCsharp);
+        Button buttonCH = findViewById(R.id.buttonNotePianoChi);
+        Button buttonD = findViewById(R.id.buttonNotePianoD);
+        Button buttonDS = findViewById(R.id.buttonNotePianoDsharp);
+        Button buttonE = findViewById(R.id.buttonNotePianoE);
+        Button buttonF = findViewById(R.id.buttonNotePianoF);
+        Button buttonFS = findViewById(R.id.buttonNotePianoFsharp);
+        Button buttonG = findViewById(R.id.buttonNotePianoG);
+        Button buttonGS = findViewById(R.id.buttonNotePianoGsharp);
 
         buttonA.setOnClickListener(this);
         buttonAS.setOnClickListener(this);
@@ -137,6 +138,7 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()){

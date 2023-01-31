@@ -3,6 +3,7 @@ package com.bekiarispanagiotis.thesis;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowCompat;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.home);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()){
