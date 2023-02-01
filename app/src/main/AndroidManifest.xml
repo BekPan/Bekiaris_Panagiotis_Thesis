@@ -20,7 +20,8 @@
         <activity
             android:name=".ViolinActivity"
             android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:resizeableActivity="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -28,7 +29,8 @@
         <activity
             android:name=".GuitarActivity"
             android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:resizeableActivity="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -36,7 +38,8 @@
         <activity
             android:name=".PianoActivity"
             android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:resizeableActivity="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -44,7 +47,8 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:resizeableActivity="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
