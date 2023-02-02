@@ -47,17 +47,17 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case R.id.piano:
                         startActivity(new Intent(getApplicationContext(),PianoActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(R.anim.animright,0);
                         finish();
                         return true;
                     case R.id.guitar:
                         startActivity(new Intent(getApplicationContext(),GuitarActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(R.anim.animright,0);
                         finish();
                         return true;
                     case R.id.violin:
                         startActivity(new Intent(getApplicationContext(),ViolinActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(R.anim.animright,0);
                         finish();
                         return true;
                 }

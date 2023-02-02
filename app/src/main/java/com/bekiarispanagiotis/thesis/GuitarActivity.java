@@ -48,19 +48,19 @@ public class GuitarActivity extends AppCompatActivity implements View.OnClickLis
                 switch (item.getItemId()){
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(R.anim.animleft,0);
                         finish();
                         return true;
                     case R.id.piano:
                         startActivity(new Intent(getApplicationContext(),PianoActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(R.anim.animleft,0);
                         finish();
                         return true;
                     case R.id.guitar:
                         return true;
                     case R.id.violin:
                         startActivity(new Intent(getApplicationContext(),ViolinActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(R.anim.animright,0);
                         finish();
                         return true;
                 }

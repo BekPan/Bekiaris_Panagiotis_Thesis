@@ -48,19 +48,19 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
                 switch (item.getItemId()){
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(R.anim.animleft,0);
                         finish();
                         return true;
                     case R.id.piano:
                         return true;
                     case R.id.guitar:
                         startActivity(new Intent(getApplicationContext(),GuitarActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(R.anim.animright,0);
                         finish();
                         return true;
                     case R.id.violin:
                         startActivity(new Intent(getApplicationContext(),ViolinActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(R.anim.animright,0);
                         finish();
                         return true;
                 }
