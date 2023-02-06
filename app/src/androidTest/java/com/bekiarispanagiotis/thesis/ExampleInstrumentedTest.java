@@ -4,6 +4,7 @@ import android.content.Context;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.core.app.ActivityScenario;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,5 +23,17 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("com.bekiarispanagiotis.thesis", appContext.getPackageName());
+    }
+
+    @Test
+    public void launchActivity() {
+        var activityScenario1 = ActivityScenario.launch(MainActivity.class);
+        activityScenario1.close();
+        var activityScenario2 = ActivityScenario.launch(PianoActivity.class);
+        activityScenario2.close();
+        var activityScenario3 = ActivityScenario.launch(GuitarActivity.class);
+        activityScenario3.close();
+        var activityScenario4 = ActivityScenario.launch(ViolinActivity.class);
+        activityScenario4.close();
     }
 }
