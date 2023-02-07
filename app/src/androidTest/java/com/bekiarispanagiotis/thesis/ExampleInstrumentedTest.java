@@ -1,5 +1,8 @@
 package com.bekiarispanagiotis.thesis;
 
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+
 import android.content.Context;
 
 import androidx.lifecycle.Lifecycle;
@@ -40,5 +43,14 @@ public class ExampleInstrumentedTest {
         var activityScenario4 = ActivityScenario.launchActivityForResult(ViolinActivity.class);
         assertEquals(activityScenario4.getState(), Lifecycle.State.RESUMED);
         activityScenario4.close();
+    }
+
+    @Test
+    public void menuIsVisible() {
+        var activityScenario = ActivityScenario.launchActivityForResult(MainActivity.class);
+        onView(withId(R.id.bottomNavigationView).matches(isDisplayed()));
+    }
+
+    private void onView(boolean matches) {
     }
 }

@@ -8,13 +8,11 @@ import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
 public class ViolinActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -25,48 +23,42 @@ public class ViolinActivity extends AppCompatActivity implements View.OnClickLis
     private SoundPool violinPool;
     private int soundA, soundD, soundE, soundG;
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_violin);
 
         maxView = getWindow().getDecorView();
-        maxView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
-            @Override
-            public void onSystemUiVisibilityChange(int visibility) {
-                if (visibility == 0)
-                    maxView.setSystemUiVisibility(fullScreenView());
-            }
+        maxView.setOnSystemUiVisibilityChangeListener(visibility -> {
+            if (visibility == 0)
+                maxView.setSystemUiVisibility(fullScreenView());
         });
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.violin);
 
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @SuppressLint("NonConstantResourceId")
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                        overridePendingTransition(R.anim.animleft,0);
-                        finish();
-                        return true;
-                    case R.id.piano:
-                        startActivity(new Intent(getApplicationContext(),PianoActivity.class));
-                        overridePendingTransition(R.anim.animleft,0);
-                        finish();
-                        return true;
-                    case R.id.guitar:
-                        startActivity(new Intent(getApplicationContext(),GuitarActivity.class));
-                        overridePendingTransition(R.anim.animleft,0);
-                        finish();
-                        return true;
-                    case R.id.violin:
-                        return true;
-                }
-                return false;
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()){
+                case R.id.home:
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    overridePendingTransition(R.anim.animleft,0);
+                    finish();
+                    return true;
+                case R.id.piano:
+                    startActivity(new Intent(getApplicationContext(),PianoActivity.class));
+                    overridePendingTransition(R.anim.animleft,0);
+                    finish();
+                    return true;
+                case R.id.guitar:
+                    startActivity(new Intent(getApplicationContext(),GuitarActivity.class));
+                    overridePendingTransition(R.anim.animleft,0);
+                    finish();
+                    return true;
+                case R.id.violin:
+                    return true;
             }
+            return false;
         });
         //load sounds to cache
         AudioAttributes audioAttributes = new AudioAttributes.Builder()
@@ -148,11 +140,6 @@ public class ViolinActivity extends AppCompatActivity implements View.OnClickLis
         Toast.makeText(this,"Tap again to exit", Toast.LENGTH_SHORT).show();
         isBackPressedOnce = true;
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                isBackPressedOnce = false;
-            }
-        }, 2000);
+        new Handler().postDelayed(() -> isBackPressedOnce = false, 2000);
     }
 }

@@ -7,12 +7,10 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private boolean isBackPressedOnce = false;
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,42 +26,35 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         maxView = getWindow().getDecorView();
-        maxView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
-            @Override
-            public void onSystemUiVisibilityChange(int visibility) {
-                if (visibility == 0)
-                    maxView.setSystemUiVisibility(fullScreenView());
-            }
+        maxView.setOnSystemUiVisibilityChangeListener(visibility -> {
+            if (visibility == 0)
+                maxView.setSystemUiVisibility(fullScreenView());
         });
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.home);
 
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @SuppressLint("NonConstantResourceId")
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.home:
-                        return true;
-                    case R.id.piano:
-                        startActivity(new Intent(getApplicationContext(),PianoActivity.class));
-                        overridePendingTransition(R.anim.animright,0);
-                        finish();
-                        return true;
-                    case R.id.guitar:
-                        startActivity(new Intent(getApplicationContext(),GuitarActivity.class));
-                        overridePendingTransition(R.anim.animright,0);
-                        finish();
-                        return true;
-                    case R.id.violin:
-                        startActivity(new Intent(getApplicationContext(),ViolinActivity.class));
-                        overridePendingTransition(R.anim.animright,0);
-                        finish();
-                        return true;
-                }
-                return false;
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()){
+                case R.id.home:
+                    return true;
+                case R.id.piano:
+                    startActivity(new Intent(getApplicationContext(),PianoActivity.class));
+                    overridePendingTransition(R.anim.animright,0);
+                    finish();
+                    return true;
+                case R.id.guitar:
+                    startActivity(new Intent(getApplicationContext(),GuitarActivity.class));
+                    overridePendingTransition(R.anim.animright,0);
+                    finish();
+                    return true;
+                case R.id.violin:
+                    startActivity(new Intent(getApplicationContext(),ViolinActivity.class));
+                    overridePendingTransition(R.anim.animright,0);
+                    finish();
+                    return true;
             }
+            return false;
         });
     }
 
@@ -92,12 +84,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this,"Tap again to exit", Toast.LENGTH_SHORT).show();
         isBackPressedOnce = true;
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                isBackPressedOnce = false;
-            }
-        }, 2000);
+        new Handler().postDelayed(() -> isBackPressedOnce = false, 2000);
     }
 
 }
