@@ -6,6 +6,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import android.content.Context;
 
 import androidx.lifecycle.Lifecycle;
+import androidx.test.espresso.action.ViewActions;
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.core.app.ActivityScenario;
@@ -52,5 +53,14 @@ public class ExampleInstrumentedTest {
     }
 
     private void onView(boolean matches) {
+    }
+
+    @Test
+    public void closeApp() {
+        //recreates onBackPressed() method
+        var activityScenario = ActivityScenario.launchActivityForResult(MainActivity.class);
+        ViewActions.pressBack();
+        ViewActions.pressBack();
+        assertNotEquals(activityScenario.getState(), Lifecycle.State.STARTED);
     }
 }
