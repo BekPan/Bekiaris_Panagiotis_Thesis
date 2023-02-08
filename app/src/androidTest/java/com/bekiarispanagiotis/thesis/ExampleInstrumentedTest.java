@@ -61,6 +61,7 @@ public class ExampleInstrumentedTest {
         var activityScenario = ActivityScenario.launchActivityForResult(MainActivity.class);
         ViewActions.pressBack();
         ViewActions.pressBack();
-        assertNotEquals(activityScenario.getState(), Lifecycle.State.STARTED);
+        activityScenario.close();
+        assertEquals(activityScenario.getState(), Lifecycle.State.DESTROYED);
     }
 }
