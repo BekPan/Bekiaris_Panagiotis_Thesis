@@ -52,9 +52,6 @@ public class ExampleInstrumentedTest {
         onView(withId(R.id.bottomNavigationView).matches(isDisplayed()));
     }
 
-    private void onView(boolean matches) {
-    }
-
     @Test
     public void closeApp() {
         //recreates onBackPressed() method
@@ -63,5 +60,21 @@ public class ExampleInstrumentedTest {
         ViewActions.pressBack();
         activityScenario.close();
         assertEquals(activityScenario.getState(), Lifecycle.State.DESTROYED);
+    }
+
+    @Test
+    public void instrumentButtonsAreVisible() {
+        var activityScenario1 = ActivityScenario.launchActivityForResult(PianoActivity.class);
+        onView(withId(R.id.buttonNotePianoC).matches(isDisplayed()));
+        activityScenario1.close();
+        var activityScenario2 = ActivityScenario.launchActivityForResult(GuitarActivity.class);
+        onView(withId(R.id.buttonNoteGuitarEhigh).matches(isDisplayed()));
+        activityScenario2.close();
+        var activityScenario3 = ActivityScenario.launchActivityForResult(ViolinActivity.class);
+        onView(withId(R.id.buttonNoteViolinD).matches(isDisplayed()));
+        activityScenario3.close();
+    }
+
+    private void onView(boolean matches) {
     }
 }
