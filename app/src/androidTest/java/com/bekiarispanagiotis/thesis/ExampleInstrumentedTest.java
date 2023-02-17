@@ -48,8 +48,18 @@ public class ExampleInstrumentedTest {
 
     @Test
     public void menuIsVisible() {
-        var activityScenario = ActivityScenario.launchActivityForResult(MainActivity.class);
+        var activityScenario1 = ActivityScenario.launchActivityForResult(MainActivity.class);
         onView(withId(R.id.bottomNavigationView).matches(isDisplayed()));
+        activityScenario1.close();
+        var activityScenario2 = ActivityScenario.launchActivityForResult(PianoActivity.class);
+        onView(withId(R.id.bottomNavigationView).matches(isDisplayed()));
+        activityScenario2.close();
+        var activityScenario3 = ActivityScenario.launchActivityForResult(GuitarActivity.class);
+        onView(withId(R.id.bottomNavigationView).matches(isDisplayed()));
+        activityScenario3.close();
+        var activityScenario4 = ActivityScenario.launchActivityForResult(ViolinActivity.class);
+        onView(withId(R.id.bottomNavigationView).matches(isDisplayed()));
+        activityScenario4.close();
     }
 
     @Test
@@ -63,16 +73,43 @@ public class ExampleInstrumentedTest {
     }
 
     @Test
-    public void instrumentButtonsAreVisible() {
+    public void pianoButtonsAreVisible() {
         var activityScenario1 = ActivityScenario.launchActivityForResult(PianoActivity.class);
         onView(withId(R.id.buttonNotePianoC).matches(isDisplayed()));
+        onView(withId(R.id.buttonNotePianoD).matches(isDisplayed()));
+        onView(withId(R.id.buttonNotePianoDsharp).matches(isDisplayed()));
+        onView(withId(R.id.buttonNotePianoE).matches(isDisplayed()));
+        onView(withId(R.id.buttonNotePianoF).matches(isDisplayed()));
+        onView(withId(R.id.buttonNotePianoFsharp).matches(isDisplayed()));
+        onView(withId(R.id.buttonNotePianoG).matches(isDisplayed()));
+        onView(withId(R.id.buttonNotePianoGsharp).matches(isDisplayed()));
+        onView(withId(R.id.buttonNotePianoA).matches(isDisplayed()));
+        onView(withId(R.id.buttonNotePianoAsharp).matches(isDisplayed()));
+        onView(withId(R.id.buttonNotePianoB).matches(isDisplayed()));
+        onView(withId(R.id.buttonNotePianoChi).matches(isDisplayed()));
         activityScenario1.close();
-        var activityScenario2 = ActivityScenario.launchActivityForResult(GuitarActivity.class);
+    }
+
+    @Test
+    public void guitarButtonsAreVisible() {
+        var activityScenario = ActivityScenario.launchActivityForResult(GuitarActivity.class);
         onView(withId(R.id.buttonNoteGuitarEhigh).matches(isDisplayed()));
-        activityScenario2.close();
-        var activityScenario3 = ActivityScenario.launchActivityForResult(ViolinActivity.class);
+        onView(withId(R.id.buttonNoteGuitarB).matches(isDisplayed()));
+        onView(withId(R.id.buttonNoteGuitarG).matches(isDisplayed()));
+        onView(withId(R.id.buttonNoteGuitarD).matches(isDisplayed()));
+        onView(withId(R.id.buttonNoteGuitarA).matches(isDisplayed()));
+        onView(withId(R.id.buttonNoteGuitarElow).matches(isDisplayed()));
+        activityScenario.close();
+    }
+
+    @Test
+    public void violinButtonsAreVisible() {
+        var activityScenario = ActivityScenario.launchActivityForResult(ViolinActivity.class);
         onView(withId(R.id.buttonNoteViolinD).matches(isDisplayed()));
-        activityScenario3.close();
+        onView(withId(R.id.buttonNoteViolinA).matches(isDisplayed()));
+        onView(withId(R.id.buttonNoteViolinE).matches(isDisplayed()));
+        onView(withId(R.id.buttonNoteViolinG).matches(isDisplayed()));
+        activityScenario.close();
     }
 
     private void onView(boolean matches) {
