@@ -3,6 +3,20 @@
   <component name="AndroidTestResultsUserPreferences">
     <option name="androidTestResultsTableState">
       <map>
+        <entry key="-2060122585">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Tests" value="360" />
+                  <entry key="adb-R58MC2XFB5V-D52s5T._adb-tls-connect._tcp" value="120" />
+                  <entry key="samsung&#10; SM-A705FN" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="-1957320176">
           <value>
             <AndroidTestResultsTableState>
@@ -33,6 +47,20 @@
           </value>
         </entry>
         <entry key="-1034757667">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Tests" value="360" />
+                  <entry key="adb-R58MC2XFB5V-D52s5T._adb-tls-connect._tcp" value="120" />
+                  <entry key="samsung&#10; SM-A705FN" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="-1020072996">
           <value>
             <AndroidTestResultsTableState>
               <option name="preferredColumnWidths">
@@ -102,6 +130,20 @@
             </AndroidTestResultsTableState>
           </value>
         </entry>
+        <entry key="844099433">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Tests" value="360" />
+                  <entry key="adb-R58MC2XFB5V-D52s5T._adb-tls-connect._tcp" value="120" />
+                  <entry key="samsung&#10; SM-A705FN" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="1041591069">
           <value>
             <AndroidTestResultsTableState>
@@ -145,6 +187,20 @@
           </value>
         </entry>
         <entry key="1436083420">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Tests" value="360" />
+                  <entry key="adb-R58MC2XFB5V-D52s5T._adb-tls-connect._tcp" value="120" />
+                  <entry key="samsung&#10; SM-A705FN" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="1521507080">
           <value>
             <AndroidTestResultsTableState>
               <option name="preferredColumnWidths">

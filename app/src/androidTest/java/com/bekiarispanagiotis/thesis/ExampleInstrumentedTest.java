@@ -1,6 +1,7 @@
 package com.bekiarispanagiotis.thesis;
 
-import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 import android.content.Context;
@@ -47,22 +48,6 @@ public class ExampleInstrumentedTest {
     }
 
     @Test
-    public void menuIsVisible() {
-        var activityScenario1 = ActivityScenario.launchActivityForResult(MainActivity.class);
-        onView(withId(R.id.bottomNavigationView).matches(isDisplayed()));
-        activityScenario1.close();
-        var activityScenario2 = ActivityScenario.launchActivityForResult(PianoActivity.class);
-        onView(withId(R.id.bottomNavigationView).matches(isDisplayed()));
-        activityScenario2.close();
-        var activityScenario3 = ActivityScenario.launchActivityForResult(GuitarActivity.class);
-        onView(withId(R.id.bottomNavigationView).matches(isDisplayed()));
-        activityScenario3.close();
-        var activityScenario4 = ActivityScenario.launchActivityForResult(ViolinActivity.class);
-        onView(withId(R.id.bottomNavigationView).matches(isDisplayed()));
-        activityScenario4.close();
-    }
-
-    @Test
     public void closeApp() {
         //recreates onBackPressed() method
         var activityScenario = ActivityScenario.launchActivityForResult(MainActivity.class);
@@ -73,45 +58,55 @@ public class ExampleInstrumentedTest {
     }
 
     @Test
-    public void pianoButtonsAreVisible() {
-        var activityScenario1 = ActivityScenario.launchActivityForResult(PianoActivity.class);
-        onView(withId(R.id.buttonNotePianoC).matches(isDisplayed()));
-        onView(withId(R.id.buttonNotePianoD).matches(isDisplayed()));
-        onView(withId(R.id.buttonNotePianoDsharp).matches(isDisplayed()));
-        onView(withId(R.id.buttonNotePianoE).matches(isDisplayed()));
-        onView(withId(R.id.buttonNotePianoF).matches(isDisplayed()));
-        onView(withId(R.id.buttonNotePianoFsharp).matches(isDisplayed()));
-        onView(withId(R.id.buttonNotePianoG).matches(isDisplayed()));
-        onView(withId(R.id.buttonNotePianoGsharp).matches(isDisplayed()));
-        onView(withId(R.id.buttonNotePianoA).matches(isDisplayed()));
-        onView(withId(R.id.buttonNotePianoAsharp).matches(isDisplayed()));
-        onView(withId(R.id.buttonNotePianoB).matches(isDisplayed()));
-        onView(withId(R.id.buttonNotePianoChi).matches(isDisplayed()));
-        activityScenario1.close();
+    public void menuClick() {
+        var activityScenario = ActivityScenario.launchActivityForResult(MainActivity.class);
+        onView(withId(R.id.piano)).perform(click());
+        onView(withId(R.id.guitar)).perform(click());
+        onView(withId(R.id.violin)).perform(click());
+        onView(withId(R.id.guitar)).perform(click());
+        onView(withId(R.id.piano)).perform(click());
+        onView(withId(R.id.home)).perform(click());
+        activityScenario.close();
+    }
+    @Test
+    public void pianoButtonsArePlayable() {
+        var activityScenarioP = ActivityScenario.launchActivityForResult(PianoActivity.class);
+        onView(withId(R.id.buttonNotePianoC)).perform(click());
+        onView(withId(R.id.buttonNotePianoCsharp)).perform(click());
+        onView(withId(R.id.buttonNotePianoD)).perform(click());
+        onView(withId(R.id.buttonNotePianoDsharp)).perform(click());
+        onView(withId(R.id.buttonNotePianoE)).perform(click());
+        onView(withId(R.id.buttonNotePianoF)).perform(click());
+        onView(withId(R.id.buttonNotePianoFsharp)).perform(click());
+        onView(withId(R.id.buttonNotePianoG)).perform(click());
+        onView(withId(R.id.buttonNotePianoGsharp)).perform(click());
+        onView(withId(R.id.buttonNotePianoA)).perform(click());
+        onView(withId(R.id.buttonNotePianoAsharp)).perform(click());
+        onView(withId(R.id.buttonNotePianoB)).perform(click());
+        onView(withId(R.id.buttonNotePianoChi)).perform(click());
+        activityScenarioP.close();
     }
 
     @Test
-    public void guitarButtonsAreVisible() {
+    public void guitarButtonsArePlayable() {
         var activityScenario = ActivityScenario.launchActivityForResult(GuitarActivity.class);
-        onView(withId(R.id.buttonNoteGuitarEhigh).matches(isDisplayed()));
-        onView(withId(R.id.buttonNoteGuitarB).matches(isDisplayed()));
-        onView(withId(R.id.buttonNoteGuitarG).matches(isDisplayed()));
-        onView(withId(R.id.buttonNoteGuitarD).matches(isDisplayed()));
-        onView(withId(R.id.buttonNoteGuitarA).matches(isDisplayed()));
-        onView(withId(R.id.buttonNoteGuitarElow).matches(isDisplayed()));
+        onView(withId(R.id.buttonNoteGuitarEhigh)).perform(click());
+        onView(withId(R.id.buttonNoteGuitarB)).perform(click());
+        onView(withId(R.id.buttonNoteGuitarG)).perform(click());
+        onView(withId(R.id.buttonNoteGuitarD)).perform(click());
+        onView(withId(R.id.buttonNoteGuitarA)).perform(click());
+        onView(withId(R.id.buttonNoteGuitarElow)).perform(click());
         activityScenario.close();
     }
 
     @Test
-    public void violinButtonsAreVisible() {
+    public void violinButtonsArePlayable() {
         var activityScenario = ActivityScenario.launchActivityForResult(ViolinActivity.class);
-        onView(withId(R.id.buttonNoteViolinD).matches(isDisplayed()));
-        onView(withId(R.id.buttonNoteViolinA).matches(isDisplayed()));
-        onView(withId(R.id.buttonNoteViolinE).matches(isDisplayed()));
-        onView(withId(R.id.buttonNoteViolinG).matches(isDisplayed()));
+        onView(withId(R.id.buttonNoteViolinD)).perform(click());
+        onView(withId(R.id.buttonNoteViolinA)).perform(click());
+        onView(withId(R.id.buttonNoteViolinE)).perform(click());
+        onView(withId(R.id.buttonNoteViolinG)).perform(click());
         activityScenario.close();
     }
 
-    private void onView(boolean matches) {
-    }
 }
