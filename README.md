@@ -1,5 +1,6 @@
 # Bekiaris_Panagiotis_Thesis
-Tuner Helper App
+Tuner Helper App provides instrument sounds for tuning.
+It was tested on virtual device Google Pixel 6 Pro.
 Music instrument sounds and images provided by me.
 App icons are provided by Google Fonts - Noto Emoji 
 under Open Font License https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
